@@ -20,9 +20,28 @@ namespace WpfExample
     /// </summary>
     public partial class MainWindow : Window
     {
+        private InfoCommand _infoCommand = new InfoCommand();
+
+        AddCommand _addNameCommand = new AddCommand();
+        public AddCommand AddNameCommand
+        {
+            get { return _addNameCommand; }
+        }
+
+        RemoveCommand _removeNameCommand = new RemoveCommand();
+        public RemoveCommand RemoveNameCommand
+        {
+            get { return _removeNameCommand; }
+        }
+
+        public InfoCommand InformationCommand
+        {
+            get { return _infoCommand; }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new NamesList();
         }
     }
 }
